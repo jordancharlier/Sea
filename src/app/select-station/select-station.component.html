@@ -1,0 +1,51 @@
+
+<h3>Choissisez une station:</h3>
+<!--<select (change)="onChange($event.target.value)">
+  <option *ngFor="let hero of heroes">{{hero.name}}</option>
+</select>-->
+<div class="col-md-6">
+<select  (click)="condition = true"  [ngModel]="selectedDeviceObj" (ngModelChange)="onChangeObj($event)" name="sel3">
+  <option  [ngValue]="seadata" *ngFor="let seadata of sea"  >{{seadata.name}}</option>
+</select>
+</div>
+<!--<p>
+  {{selectedDeviceObj}}
+</p>-->
+<!--<ul>
+  <li *ngFor="let item of selectedDeviceObj">
+    {{item}}
+  </li></ul>-->
+  <br>
+<div *ngIf="condition" class="col-md-7">
+  <table class="table table-striped table-hover ">
+<thead>
+    <tr>
+      <th>horaires</th>
+      </thead>
+  <tbody>
+    <tr *ngFor="let item of selectedDeviceObj">
+    {{item}}
+    </tr>
+  </tbody></table>
+ 
+</div>
+<div *ngIf="condition" class="col-md-2">
+  <table class="table table-striped table-hover ">
+<thead>
+    <tr>
+      <th>places</th>
+      </thead>
+  <tbody>
+    <tr *ngFor="let items of selectedDevicecount;  let i = index"
+      (click)="onClickMeBaby($event,i)">
+ 
+    <button class="btn btn-primary btn-xs" >
+      {{items}}
+    </button>
+      
+    </tr>
+  </tbody></table>
+</div>
+<p>
+  Normalement, Quand on clique sur les places ça incrémente ou décrémente avec un autre boutton mais j'ai pas réussi'
+</p>

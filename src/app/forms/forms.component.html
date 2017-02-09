@@ -1,0 +1,25 @@
+<div class="jumbotron">
+    <h4>Vous pouvez ici nous laisser un petit commentaire sur comment devenir un mâitre en angular</h4>
+    <!-- Right of the bat, we no longer declare a local variable but use the formGroup directive and set it the complexForm object we defined in the constructor. Throughout the form, we will reference the complexForm root object as can be seen in the submitForm function.-->
+    <form [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)">
+      
+      <div class="form-group">
+        <label>Commentaire</label>
+        <input class="form-control" type="text" placeholder="Ecrivez ici votre commentaire " [formControl]="complexForm.controls['Commentaire']">
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-default" (click)="addForm(complexForm.get('Commentaire').value); complexForm.get('Commentaire').value=''">
+          Soumission</button>
+      </div>
+    </form>
+  </div>
+
+<div *ngFor=" let key of forms" class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Commentaire Annonyme</h3>
+  </div>
+  <div class="panel-body">
+    {{key.text}}
+  </div>
+</div>

@@ -37,7 +37,7 @@
       </thead>
   <tbody>
     <tr *ngFor="let items of selectedDevicecount;  let i = index"
-      (click)="onClickMeBaby($event,i)">
+      (click)="onClickMe($event,i)">
  
     <button class="btn btn-primary btn-xs" >
       {{items}}
@@ -46,6 +46,3 @@
     </tr>
   </tbody></table>
 </div>
-<p>
-  Normalement, Quand on clique sur les places ça incrémente ou décrémente avec un autre boutton mais j'ai pas réussi'
-</p>

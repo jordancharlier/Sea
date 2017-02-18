@@ -26,18 +26,18 @@ console.log(newObj);
     this.selectedDeviceObj = newObj.horaires;
      this.selectedDevicecount = newObj.count;
   }
-  onClickMeBaby(obj,i) { 
+  onClickMe(obj,i) { 
 
     this.a=obj.count[i]++;
   //this.addHero(this.a);
   console.log("CLICKKK")
   }
-  constructor (private heroService: SeaService) {}
+  constructor (private seaService: SeaService) {}
 
   ngOnInit() { this.getSea(); }
 
   getSea() {
-    this.heroService.getSea()
+    this.seaService.getSea()
                      .subscribe(
                        sea => this.sea = sea,
                        error =>  this.errorMessage = <any>error);
